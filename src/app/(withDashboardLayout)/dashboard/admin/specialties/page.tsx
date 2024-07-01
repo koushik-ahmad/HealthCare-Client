@@ -37,7 +37,7 @@ const SpecialtiesPage = () => {
       renderCell: ({ row }) => {
         return (
           <Box>
-            <Image src={row.icon} width={30} height={30} alt="icon" />
+            <Image src={row?.icon} width={30} height={30} alt="icon" />
           </Box>
         );
       },
@@ -50,7 +50,7 @@ const SpecialtiesPage = () => {
       align: "center",
       renderCell: ({ row }) => {
         return (
-          <IconButton onClick={() => handleDelete(row.id)} aria-label="delete">
+          <IconButton onClick={() => handleDelete(row?.id)} aria-label="delete">
             <DeleteIcon />
           </IconButton>
         );
@@ -67,7 +67,7 @@ const SpecialtiesPage = () => {
       </Stack>
       {!isLoading ? (
         <Box my={2}>
-          <DataGrid rows={data} columns={columns} />
+          <DataGrid rows={data} columns={columns} hideFooter={true} />
         </Box>
       ) : (
         <h1>Loading....</h1>

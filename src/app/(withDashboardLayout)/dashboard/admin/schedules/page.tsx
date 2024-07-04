@@ -53,6 +53,7 @@ const SchedulesPage = () => {
       },
     },
   ];
+
   return (
     <Box>
       <Button onClick={() => setIsModalOpen(true)}>Create Schedule</Button>

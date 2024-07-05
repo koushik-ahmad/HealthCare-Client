@@ -100,7 +100,7 @@ const DoctorInformation = ({ data }: any) => {
         </StyledInformationBox>
         <StyledInformationBox>
           <Typography variant="caption" color="secondary">
-            experience
+            Experience
           </Typography>
           <Typography>{data?.experience}</Typography>
         </StyledInformationBox>

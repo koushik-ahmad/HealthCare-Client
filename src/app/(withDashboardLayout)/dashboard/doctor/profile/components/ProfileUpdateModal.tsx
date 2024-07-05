@@ -97,7 +97,6 @@ const ProfileUpdateModal = ({ open, setOpen, id }: TProps) => {
         refetch();
         setOpen(false);
       }
-      console.log(res);
     } catch (err: any) {
       console.error(err.message);
     }

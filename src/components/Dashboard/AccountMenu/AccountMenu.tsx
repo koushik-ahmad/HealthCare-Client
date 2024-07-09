@@ -10,6 +10,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Logout from "@mui/icons-material/Logout";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRouter } from "next/navigation";
+import { logoutUser } from "@/services/actions/logoutUser";
 
 const menuStyles = {
   paper: {
@@ -52,8 +53,7 @@ export default function AccountMenu() {
 
   const handleLogout = () => {
     setAnchorEl(null);
-    localStorage.removeItem("accessToken");
-    router.push("/login");
+    logoutUser(router);
   };
 
   return (
@@ -75,7 +75,7 @@ export default function AccountMenu() {
             aria-controls={open ? "account-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
-            //   size='small'
+            //  size='small'
             sx={{
               background: "#ffffff",
               "& svg": {

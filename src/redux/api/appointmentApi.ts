@@ -12,6 +12,7 @@ export const appointmentApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: [tagTypes.appointment],
     }),
+
     getAllAppointments: build.query({
       query: (arg: Record<string, any>) => {
         return {
@@ -28,6 +29,7 @@ export const appointmentApi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.appointment],
     }),
+
     getMyAppointments: build.query({
       query: (arg: Record<string, any>) => {
         return {
@@ -44,6 +46,7 @@ export const appointmentApi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.appointment],
     }),
+
     getAppointment: build.query({
       query: (id: string | string[] | undefined) => ({
         url: `/appointment/${id}`,
@@ -51,6 +54,7 @@ export const appointmentApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.appointment],
     }),
+
     appointmentStatusChange: build.mutation({
       query: (data) => ({
         url: `/appointment/status/${data.id}`,
@@ -59,6 +63,7 @@ export const appointmentApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: [tagTypes.appointment],
     }),
+
     deleteAppointment: build.mutation({
       query: (id) => ({
         url: `/appointment/soft/${id}`,
